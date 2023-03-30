@@ -1,0 +1,16 @@
+
+.cover-img{
+    width: 845px;
+    height: 450px;
+    border-radius: 8px;
+}
+.author-img{
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+}
+.data-container{
+    background-color: whitesmoke;
+    margin-bottom: 30px;
+    border-radius: 8px;
+}
