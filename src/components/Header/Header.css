@@ -1,0 +1,35 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1C2B35;
+    height: 80px;
+    padding: 0 90px;
+}
+.header-title{
+    font-family: 'Exo 2';
+    font-style: normal;
+    color: white;
+    font-size: 30px;
+    font-weight: 400;
+}
+.header-info{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.header-img{
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+}
+.header-link a{
+    text-decoration: none;
+    color: white;
+    margin-left: 20px;
+    font-size: 18px;
+    font: 300;
+}
+.header-link a:hover{
+    color: orange;
+}
