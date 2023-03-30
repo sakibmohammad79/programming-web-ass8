@@ -1,5 +1,7 @@
 import React from 'react';
 import './ProgrammingSlide.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBookmark } from '@fortawesome/free-solid-svg-icons'
 
 const ProgrammingSlide = (props) => {
     const {slide_picture, outhor_picture, name, id, title, time, date} = props.data;
@@ -18,7 +20,11 @@ const ProgrammingSlide = (props) => {
                             </div>
                         </div>
                         <div>
-                            <p>{time}</p>
+                            <p>
+                                {time}
+                                <FontAwesomeIcon icon={faBookmark} className='ps-2' />
+                            </p>
+
                         </div>
                     </div>
                     <p>{title}</p>

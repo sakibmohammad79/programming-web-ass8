@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import ProgrammingCart from '../ProgrammingCart/ProgrammingCart';
 import ProgrammingSlide from '../ProgrammingSlide/ProgrammingSlide';
 import './ProgrammingWeb.css'
 
@@ -20,7 +21,9 @@ const ProgrammingWeb = () => {
                 }
             </div>
             <div className='programming-cart'>
-                <p>this cart </p>
+                {
+                    <ProgrammingCart></ProgrammingCart>
+                }
             </div>
         </div>
     );
