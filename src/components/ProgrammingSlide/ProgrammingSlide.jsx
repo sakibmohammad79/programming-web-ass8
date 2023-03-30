@@ -15,21 +15,25 @@ const ProgrammingSlide = (props) => {
                         <div className='d-flex align-items-center'>
                             <img className='author-img' src={outhor_picture} alt="" />
                             <div className='ms-3'>
-                            <p>{name}</p>
-                            <p>{date}</p>
+                            <p className='author-name'>{name}</p>
+                            <p className='date'>{date}</p>
                             </div>
                         </div>
                         <div>
-                            <p>
-                                {time}
-                                <FontAwesomeIcon icon={faBookmark} className='ps-2' />
+                            <p className='d-flex'>
+                                <div className='time'>
+                                    {time}
+                                </div>
+                                <div>
+                                <FontAwesomeIcon icon={faBookmark} className='ps-2'/>
+                                </div>
                             </p>
 
                         </div>
                     </div>
-                    <p>{title}</p>
-                    <p>#beginners  #programming</p>
-                    <a href="#">Mark as read</a>
+                    <p className='title'>{title}</p>
+                    <p className='tag'>#beginners  #programming</p>
+                    <a className='link' href="#">Mark as read</a>
                 </div>
         </div>
     );
