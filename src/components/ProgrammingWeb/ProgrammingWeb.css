@@ -1,0 +1,9 @@
+.programming-web{
+    min-width: 100%;
+    padding: 0 100px;
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+}
+.programming-slides{
+    margin: 50px;
+}
