@@ -18,8 +18,17 @@ const ProgrammingWeb = () => {
 
     useEffect(()=>{
         const storedCart = getWebCart();
-        console.log(storedCart);
-    },[])
+        const savedCart = [];
+        for(const id in storedCart){
+            const addedData = datas.find(data => data.id === id);
+            if(addedData){
+                const quantity = storedCart[id];
+            addedData.quantity = quantity;
+            savedCart.push(addedData);
+            }
+        }
+        setCart(savedCart);
+    },[datas]);
     const onClickHandler = (time)=>{
         const previousWatchTime = JSON.parse(localStorage.getItem("watchTime"));
         if(previousWatchTime){
