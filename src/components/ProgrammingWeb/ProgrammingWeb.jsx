@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react';
 import ProgrammingCart from '../ProgrammingCart/ProgrammingCart';
 import ProgrammingSlide from '../ProgrammingSlide/ProgrammingSlide';
 import './ProgrammingWeb.css'
+import SideCart from '../sideCart/SideCart';
 
 const ProgrammingWeb = () => {
     const [datas, setDatas] = useState([]);
     const [watchTime, setWatchTime] =useState([]);
+    const [titles, setTitles] = useState([]);
     useEffect(() => {
         fetch('fackData.json')
         .then((res) => res.json())
@@ -22,7 +24,20 @@ const ProgrammingWeb = () => {
             localStorage.setItem("watchTime", time);
             setWatchTime(time);
         }
+    }
 
+    const handleSideCardData = (title) =>{
+        const previousTitle = JSON.parse(localStorage.getItem("title"));
+        if(previousTitle){
+            const newtitle = previousTitle + title;
+            localStorage.setItem("title", JSON.stringify(newtitle));
+            setTitles(newtitle);
+        }
+        else{
+            localStorage.setItem("title", JSON.stringify(title));
+            setTitles(title);
+        }
+        
     }
     
     return (
@@ -33,11 +48,17 @@ const ProgrammingWeb = () => {
                    key={data.id}
                    data={data}
                    onClickHandler = {onClickHandler}
+                   handleSideCardData = {handleSideCardData}
                    ></ProgrammingSlide>)
                 }
             </div>
             <div className='programming-cart  col-lg-3'>
                     <ProgrammingCart watchTime = {watchTime}></ProgrammingCart>
+                   <div className='mb-3'>
+                   {
+                         <SideCart title={titles}></SideCart>
+                    }
+                   </div>
             </div>
         </div>
     );

@@ -62,3 +62,6 @@
     text-decoration-line: underline;
     color: #6047EC;
 }
+.icon:hover{
+        cursor: pointer;
+}

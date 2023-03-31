@@ -13,10 +13,6 @@ const ProgrammingCart = ({watchTime}) => {
             <div className='time-container mb-3 bg-info p-3'>
                 Spent time on read : {time} min
             </div>
-            <div className='cart-info-container bg-dark text-white p-3'>
-                Bookmarked Blogs : 8
-                <p></p>
-            </div>
         </div>
     );
 };
