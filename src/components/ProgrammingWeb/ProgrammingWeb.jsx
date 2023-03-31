@@ -8,7 +8,7 @@ import { addToDb, getWebCart } from '../../utilities';
 
 const ProgrammingWeb = () => {
     const [datas, setDatas] = useState([]);
-    const [watchTime, setWatchTime] =useState([]);
+    const [watchTime, setWatchTime] =useState([0]);
     const [cart, setCart] = useState([])
     useEffect(() => {
         fetch('fackData.json')
@@ -47,21 +47,7 @@ const ProgrammingWeb = () => {
         setCart(newCart);
         addToDb(data.id)
     }
-    // const handleSideCardData = (title) =>{
-        
-    //     const previousTitle = JSON.parse(localStorage.getItem("title"));
-    //     if(previousTitle){
-    //         const newtitle = [...titles, title] ;
-    //         localStorage.setItem("title", JSON.stringify(newtitle));
-    //         setTitles(newtitle);
-    //     }
-    //     else{
-    //          localStorage.setItem("title", JSON.stringify(title));
-    //         setTitles(title);
-    //     }
-        
-    // }
-    
+  
     return (
         <div className='programming-web d-flex row'>
             <div className='programming-slides  col-lg-9'>
