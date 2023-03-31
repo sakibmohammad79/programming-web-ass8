@@ -24,7 +24,7 @@ const ProgrammingSlide = (props) => {
                         <div>
                             <div className='d-flex'>
                                 <p className='time'>
-                                    {time}
+                                    {time} min read
                                 </p>
                                 <p>
                                 <FontAwesomeIcon icon={faBookmark} className='ps-2'/>
@@ -34,7 +34,7 @@ const ProgrammingSlide = (props) => {
                     </div>
                     <p className='title'>{title}</p>
                     <p className='tag'>#beginners  #programming</p>
-                    <a onClick={()=>onClickHandler(props.data)} className='link' href="#">Mark as read</a>
+                    <a onClick={()=>onClickHandler(time)} className='link' href="#">Mark as read</a>
                 </div>
         </div>
     );
