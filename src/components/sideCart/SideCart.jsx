@@ -12,7 +12,7 @@ const SideCart = ({cart}) => {
     return (
     <div className='cart-info-container bg-dark text-white p-3'>
             <p>bookmark blog: {cart.length}</p>
-            <p>{title}</p>
+            <h6>{title}</h6>
     </div> 
         
          

@@ -50,7 +50,7 @@ const ProgrammingWeb = () => {
   
     return (
         <div className='programming-web d-flex row'>
-            <div className='programming-slides  col-lg-9'>
+            <div className='programming-slides   col-lg-9'>
                 {
                    datas.map((data) => <ProgrammingSlide
                    key={data.id}
@@ -60,7 +60,7 @@ const ProgrammingWeb = () => {
                    ></ProgrammingSlide>)
                 }
             </div>
-            <div className='programming-cart  col-lg-3'>
+            <div className='programming-cart col-lg-3'>
                     <ProgrammingCart watchTime = {watchTime}></ProgrammingCart>
                     <div>
                    {
