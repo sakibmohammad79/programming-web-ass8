@@ -6,7 +6,7 @@ import { faBookmark } from '@fortawesome/free-solid-svg-icons'
 const ProgrammingSlide = (props) => {
     const {slide_picture, outhor_picture, name, id, title, time, date} = props.data;
     const onClickHandler = props.onClickHandler;
-    const handleSideCardData = props.handleSideCardData;
+    const handleAddToCart = props.handleAddToCart;
     
     return (
         <div className='data-container'>
@@ -28,7 +28,7 @@ const ProgrammingSlide = (props) => {
                                     {time} min read
                                 </p>
                                 <p>
-                                <FontAwesomeIcon onClick={()=>handleSideCardData(title)} icon={faBookmark} className='ps-2 icon'/>
+                                <FontAwesomeIcon onClick={()=>handleAddToCart(props.data)} icon={faBookmark} className='ps-2 icon'/>
                                 </p>
                             </div>
                         </div>

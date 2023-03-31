@@ -3,15 +3,22 @@ import ProgrammingCart from '../ProgrammingCart/ProgrammingCart';
 import ProgrammingSlide from '../ProgrammingSlide/ProgrammingSlide';
 import './ProgrammingWeb.css'
 import SideCart from '../sideCart/SideCart';
+import { addToDb, getWebCart } from '../../utilities';
+
 
 const ProgrammingWeb = () => {
     const [datas, setDatas] = useState([]);
     const [watchTime, setWatchTime] =useState([]);
-    const [titles, setTitles] = useState([]);
+    const [cart, setCart] = useState([])
     useEffect(() => {
         fetch('fackData.json')
         .then((res) => res.json())
         .then((data) => setDatas(data))
+    },[])
+
+    useEffect(()=>{
+        const storedCart = getWebCart();
+        console.log(storedCart);
     },[])
     const onClickHandler = (time)=>{
         const previousWatchTime = JSON.parse(localStorage.getItem("watchTime"));
@@ -26,19 +33,25 @@ const ProgrammingWeb = () => {
         }
     }
 
-    const handleSideCardData = (title) =>{
-        const previousTitle = JSON.parse(localStorage.getItem("title"));
-        if(previousTitle){
-            const newtitle = previousTitle + title;
-            localStorage.setItem("title", JSON.stringify(newtitle));
-            setTitles(newtitle);
-        }
-        else{
-            localStorage.setItem("title", JSON.stringify(title));
-            setTitles(title);
-        }
-        
+    const handleAddToCart = (data)=>{
+        const newCart = [...cart, data]
+        setCart(newCart);
+        addToDb(data.id)
     }
+    // const handleSideCardData = (title) =>{
+        
+    //     const previousTitle = JSON.parse(localStorage.getItem("title"));
+    //     if(previousTitle){
+    //         const newtitle = [...titles, title] ;
+    //         localStorage.setItem("title", JSON.stringify(newtitle));
+    //         setTitles(newtitle);
+    //     }
+    //     else{
+    //          localStorage.setItem("title", JSON.stringify(title));
+    //         setTitles(title);
+    //     }
+        
+    // }
     
     return (
         <div className='programming-web d-flex row'>
@@ -48,17 +61,17 @@ const ProgrammingWeb = () => {
                    key={data.id}
                    data={data}
                    onClickHandler = {onClickHandler}
-                   handleSideCardData = {handleSideCardData}
+                   handleAddToCart = {handleAddToCart}
                    ></ProgrammingSlide>)
                 }
             </div>
             <div className='programming-cart  col-lg-3'>
                     <ProgrammingCart watchTime = {watchTime}></ProgrammingCart>
-                   <div className='mb-3'>
+                    <div>
                    {
-                         <SideCart title={titles}></SideCart>
+                        <SideCart  cart={cart}></SideCart>
                     }
-                   </div>
+                   </div> 
             </div>
         </div>
     );
