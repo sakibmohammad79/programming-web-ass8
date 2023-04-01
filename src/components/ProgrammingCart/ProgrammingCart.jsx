@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './ProgrammingCart.css'
 
 const ProgrammingCart = ({watchTime}) => {
-    const [time, setTime] = useState([watchTime]);
+    const [time, setTime] = useState([0]);
     useEffect(()=>{
         const getWatchTimeFromStorage = localStorage.getItem("watchTime");
         setTime(getWatchTimeFromStorage);

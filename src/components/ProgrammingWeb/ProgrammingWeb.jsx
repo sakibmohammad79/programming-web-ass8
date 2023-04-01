@@ -79,7 +79,7 @@ const ProgrammingWeb = () => {
                     <ProgrammingCart watchTime = {watchTime}></ProgrammingCart>
                     <div>
                    {
-                        <SideCart cart={cart}></SideCart>
+                        <SideCart key={cart.id} cart={cart}></SideCart>
                     }
                    </div> 
             </div>
