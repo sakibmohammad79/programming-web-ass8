@@ -4,6 +4,7 @@ import Header from './components/Header/Header'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ProgrammingWeb from './components/ProgrammingWeb/ProgrammingWeb'
 import Question from './components/question/Question'
+import { ToastContainer } from 'react-toastify';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
            <Header></Header>
            <ProgrammingWeb></ProgrammingWeb>
            <Question></Question>
+           <ToastContainer/>
       </div>
   )
 }

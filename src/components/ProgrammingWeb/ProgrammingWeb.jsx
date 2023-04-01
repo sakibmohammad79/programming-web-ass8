@@ -4,6 +4,8 @@ import ProgrammingSlide from '../ProgrammingSlide/ProgrammingSlide';
 import './ProgrammingWeb.css'
 import { addToDb, getWebCart } from '../../utilities';
 import SideCart from '../sideCart/SideCart';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -48,18 +50,25 @@ const ProgrammingWeb = () => {
 
     const handleAddToCart = (data)=>{
         const newCart = [...cart, data];
-        const exists = datas.find(book => book.id == data.id);
-        if(exists){
-            alert('already bookmark')
-        }
         setCart(newCart);
         addToDb(data.id)
+
+        const exist = cart.find(ct => ct.id === data.id);
+        if(exist){
+            
+            toast.error("Already Have Bookmarked", {theme: "colored"});
+        }
+        else{
+            
+            toast.success("Succesfully Bookmarked", { theme: "colored"});
+        }
+
     }
   
     return (
        <div >
          <div  className='programming-web d-flex row'>
-            <div style={{'minHeight': '5200px'}} className='programming-slides m-1 m-lg-5 col-12  col-lg-9'>
+            <div style={{'minHeight': '5180px'}} className='programming-slides m-1 m-lg-5 col-12  col-lg-9'>
                 {
                    datas.map((data) => <ProgrammingSlide
                    key={data.id}
@@ -69,7 +78,7 @@ const ProgrammingWeb = () => {
                    ></ProgrammingSlide>)
                 }
             </div>
-            <div style={{'minHeight': '500px'}} className='programming-cart col-12 col-lg-3'>
+            <div style={{'minHeight': '400px'}} className='programming-cart col-12 col-lg-3'>
                     <ProgrammingCart watchTime = {watchTime}></ProgrammingCart>
                     <div>
                    {
