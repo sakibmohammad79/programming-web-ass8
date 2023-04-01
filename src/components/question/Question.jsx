@@ -2,7 +2,7 @@ import React from 'react';
 
 const Question = () => {
     return (
-        <div className='text-center'>
+        <div className='text-center bg-dark p-3 text-white'>
             <h3>Question 1: React State vs Props explained.</h3>
             <p>Props: React is a component-based library that divides the UI into little reusable pieces. In some cases, those components need to communicate (send data to each other) and the way to pass data between components is by using props.“Props” is a special keyword in React, which stands for properties and is being used for passing data from one component to another.<br></br>
             State: React components have a built-in state object. The state is encapsulated data where you store assets that are persistent between component renderings.The state is just a fancy term for a JavaScript data structure. If a user changes state by interacting with your application, the UI may look completely different afterwards, because it's represented by this new state rather than the old state.</p>

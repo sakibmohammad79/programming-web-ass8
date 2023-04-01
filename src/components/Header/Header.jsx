@@ -3,11 +3,11 @@ import './Header.css'
 
 const Header = () => {
     return (
-        <nav className='header'>
+        <nav className='header ps-2 pe-2 pt-3 pb-3 ps-lg-5 pe-lg-5 pt-lg-3 pb-lg-3'>
             <div className='header-title'>
                 <p>Let's Code Your Career</p>
             </div>
-            <div className='header-info'>
+            <div className='header-info d-flex'>
                 <div className='header-link'>
                 <a href="/home">Home</a>
                 <a href="/tutorial">Tutorial</a>

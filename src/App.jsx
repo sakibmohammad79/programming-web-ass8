@@ -1,21 +1,20 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Header from './components/Header/Header'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ProgrammingWeb from './components/ProgrammingWeb/ProgrammingWeb'
 import Question from './components/question/Question'
 
+
 function App() {
   const [count, setCount] = useState(0)
 
   return (
       <div className="App">
-      <Header></Header>
-      <ProgrammingWeb></ProgrammingWeb>
-      <Question></Question>
-    </div>
+           <Header></Header>
+           <ProgrammingWeb></ProgrammingWeb>
+           <Question></Question>
+      </div>
   )
 }
 

@@ -1,4 +1,6 @@
-
+.data-container{
+    display: block;
+}
 .cover-img{
     width: 745px;
     height: 450px;

@@ -20,11 +20,13 @@ const ProgrammingWeb = () => {
 
     useEffect(()=>{
         const storedCart = getWebCart();
+        //console.log(storedCart);
         const savedCart = [];
+        
         for(const id in storedCart){
             const addedData = datas.find(data => data.id === id);
             if(addedData){
-                const quantity = storedCart[id];
+            const quantity = storedCart[id];
             addedData.quantity = quantity;
             savedCart.push(addedData);
             }
@@ -45,15 +47,19 @@ const ProgrammingWeb = () => {
     }
 
     const handleAddToCart = (data)=>{
-        const newCart = [...cart, data]
+        const newCart = [...cart, data];
+        const exists = datas.find(book => book.id == data.id);
+        if(exists){
+            alert('already bookmark')
+        }
         setCart(newCart);
         addToDb(data.id)
     }
   
     return (
-       <div>
-         <div className='programming-web d-flex row'>
-            <div className='programming-slides   col-lg-9'>
+       <div >
+         <div  className='programming-web d-flex row'>
+            <div style={{'minHeight': '5200px'}} className='programming-slides m-1 m-lg-5 col-12  col-lg-9'>
                 {
                    datas.map((data) => <ProgrammingSlide
                    key={data.id}
@@ -63,7 +69,7 @@ const ProgrammingWeb = () => {
                    ></ProgrammingSlide>)
                 }
             </div>
-            <div className='programming-cart col-lg-3'>
+            <div style={{'minHeight': '500px'}} className='programming-cart col-12 col-lg-3'>
                     <ProgrammingCart watchTime = {watchTime}></ProgrammingCart>
                     <div>
                    {
