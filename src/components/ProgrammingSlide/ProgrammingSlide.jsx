@@ -3,13 +3,15 @@ import './ProgrammingSlide.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBookmark } from '@fortawesome/free-solid-svg-icons'
 
+
 const ProgrammingSlide = (props) => {
-    const {slide_picture, outhor_picture, name, id, title, time, date} = props.data;
+    const {slide_picture, outhor_picture, name, title, time, date} = props.data;
     const onClickHandler = props.onClickHandler;
     const handleAddToCart = props.handleAddToCart;
     
     return (
-        <div className='data-container'>
+        <div>
+            <div className='data-container'>
                 <div>
                 <img className='cover-img img-fluid' src={slide_picture} alt="" />
                 </div>
@@ -28,7 +30,7 @@ const ProgrammingSlide = (props) => {
                                     {time} min read
                                 </p>
                                 <p>
-                                <FontAwesomeIcon onClick={()=>handleAddToCart(props.data)} icon={faBookmark} className='ps-2 icon'/>
+                                    <FontAwesomeIcon onClick={()=>handleAddToCart(props.data)} icon={faBookmark} className='ps-2 icon'/>
                                 </p>
                             </div>
                         </div>
@@ -37,6 +39,8 @@ const ProgrammingSlide = (props) => {
                     <p className='tag'>#beginners  #programming</p>
                     <a onClick={()=>onClickHandler(time)} className='link' href="#">Mark as read</a>
                 </div>
+            </div>
+            
         </div>
     );
 };

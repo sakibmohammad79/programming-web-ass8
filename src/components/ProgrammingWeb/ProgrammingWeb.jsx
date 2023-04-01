@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 import ProgrammingCart from '../ProgrammingCart/ProgrammingCart';
 import ProgrammingSlide from '../ProgrammingSlide/ProgrammingSlide';
 import './ProgrammingWeb.css'
-import SideCart from '../sideCart/SideCart';
 import { addToDb, getWebCart } from '../../utilities';
+import SideCart from '../sideCart/SideCart';
+
+
 
 
 const ProgrammingWeb = () => {
@@ -49,7 +51,8 @@ const ProgrammingWeb = () => {
     }
   
     return (
-        <div className='programming-web d-flex row'>
+       <div>
+         <div className='programming-web d-flex row'>
             <div className='programming-slides   col-lg-9'>
                 {
                    datas.map((data) => <ProgrammingSlide
@@ -64,11 +67,12 @@ const ProgrammingWeb = () => {
                     <ProgrammingCart watchTime = {watchTime}></ProgrammingCart>
                     <div>
                    {
-                        <SideCart  cart={cart}></SideCart>
+                        <SideCart cart={cart}></SideCart>
                     }
                    </div> 
             </div>
         </div>
+       </div>
     );
 };
 
