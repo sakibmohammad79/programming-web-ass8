@@ -10,7 +10,7 @@ const ProgrammingCart = ({watchTime}) => {
     
     return (
         <div className='cart-container'>
-            <div className='time-container fs-5 fw-medium text-white mb-3 bg-info p-3'>
+            <div className='time-container fs-5 fw-medium text-dark shadow-lg bg-gradient-secondary mb-4 bg-transparent  p-3 rounded'>
                 Spent time on read: {time} min
             </div>
         </div>

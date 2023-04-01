@@ -7,9 +7,6 @@ import SideCart from '../sideCart/SideCart';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
-
-
 const ProgrammingWeb = () => {
     const [datas, setDatas] = useState([]);
     const [watchTime, setWatchTime] =useState([0]);
@@ -64,11 +61,11 @@ const ProgrammingWeb = () => {
         }
 
     }
-  
+
     return (
        <div >
          <div  className='programming-web d-flex row'>
-            <div style={{'minHeight': '5180px'}} className='programming-slides m-1 m-lg-5 col-12  col-lg-9'>
+            <div style={{'minHeight': '5070px'}} className='programming-slides m-1 m-lg-5 col-12  col-lg-9'>
                 {
                    datas.map((data) => <ProgrammingSlide
                    key={data.id}
@@ -78,7 +75,7 @@ const ProgrammingWeb = () => {
                    ></ProgrammingSlide>)
                 }
             </div>
-            <div style={{'minHeight': '400px'}} className='programming-cart col-12 col-lg-3'>
+            <div style={{'minHeight': '500px'}} className='programming-cart col-12 col-lg-3'>
                     <ProgrammingCart watchTime = {watchTime}></ProgrammingCart>
                     <div>
                    {

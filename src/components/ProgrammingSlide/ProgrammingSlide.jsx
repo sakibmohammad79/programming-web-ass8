@@ -3,7 +3,6 @@ import './ProgrammingSlide.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBookmark } from '@fortawesome/free-solid-svg-icons'
 
-
 const ProgrammingSlide = (props) => {
     const {slide_picture, outhor_picture, name, title, time, date} = props.data;
     const onClickHandler = props.onClickHandler;
@@ -15,7 +14,7 @@ const ProgrammingSlide = (props) => {
                 <div>
                 <img className='cover-img img-fluid' src={slide_picture} alt="" />
                 </div>
-                <div className='slide-info pt-3 ps-1 pe-3 pb-3'>
+                <div className='slide-info pt-3 ps-1 pe-3 pb-3 '>
                     <div className='d-flex justify-content-between'>
                         <div className='d-flex align-items-center'>
                             <img className='author-img' src={outhor_picture} alt="" />
